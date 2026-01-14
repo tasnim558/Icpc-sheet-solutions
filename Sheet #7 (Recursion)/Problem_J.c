@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-int fibo(int n) {
-    if (n == 1) return 0;
-    if (n == 2) return 1;
-    return fibo(n - 1) + fibo(n - 2);
+void factorial(int i, int n, long long multi)
+{
+    if (i > n) {
+        printf("%lld\n", multi);
+        return;
+    }
+    factorial(i + 1, n, multi * i);
 }
 
-int main() {
+int main()//bottom up method 
+{
     int n;
     scanf("%d", &n);
-
-    int result = fibo(n);
-    printf("%d\n", result);
-
+    factorial(1, n, 1);
     return 0;
 }
-Problem o
